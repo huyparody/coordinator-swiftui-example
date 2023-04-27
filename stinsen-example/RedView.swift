@@ -10,8 +10,6 @@ import Stinsen
 
 struct RedView: View {
     
-    @EnvironmentObject var router: MainCoordinator.Router
-    
     var body: some View {
         Color.red
     }

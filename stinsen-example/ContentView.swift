@@ -12,8 +12,6 @@ struct ContentView: View {
     
     @EnvironmentObject var router: MainCoordinator.Router
     
-    @State private var test = ""
-    
     var body: some View {
         VStack {
             Button {
