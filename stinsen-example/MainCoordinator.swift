@@ -17,15 +17,11 @@ final class MainCoordinator: NavigationCoordinatable {
     @Route(.push) var pushToRed = makeRed
     
     @ViewBuilder func makeStart() -> some View {
-        NavigationView {
-            ContentView()
-        }
+        ContentView()
     }
     
     @ViewBuilder func makeRed() -> some View {
-        NavigationView {
-            RedView()
-        }
+        RedView()
     }
     
 //    func makeRed() -> NavigationViewCoordinator<RedCoordinator> {
