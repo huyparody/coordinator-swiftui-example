@@ -17,6 +17,14 @@
 		14FECEDC29FA4ECF00782606 /* Stinsen in Frameworks */ = {isa = PBXBuildFile; productRef = 14FECEDB29FA4ECF00782606 /* Stinsen */; };
 		14FECEDE29FA4F0300782606 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEDD29FA4F0300782606 /* MainCoordinator.swift */; };
 		14FECEE029FA513700782606 /* RedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEDF29FA513700782606 /* RedView.swift */; };
+		14FECEE529FB6F4700782606 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEE429FB6F4700782606 /* AppCoordinator.swift */; };
+		14FECEE829FB6FF000782606 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEE729FB6FF000782606 /* HomeView.swift */; };
+		14FECEEA29FB700700782606 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEE929FB700700782606 /* HomeCoordinator.swift */; };
+		14FECEED29FB737E00782606 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEEC29FB737E00782606 /* ProfileView.swift */; };
+		14FECEEF29FB738E00782606 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEEE29FB738E00782606 /* ProfileCoordinator.swift */; };
+		14FECEF129FB74E400782606 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEF029FB74E400782606 /* LoginView.swift */; };
+		14FECEF329FB74ED00782606 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEF229FB74ED00782606 /* LoginCoordinator.swift */; };
+		14FECEF629FB78E500782606 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FECEF529FB78E500782606 /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		14FECECD29FA4E1D00782606 /* stinsen_exampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stinsen_exampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		14FECEDD29FA4F0300782606 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		14FECEDF29FA513700782606 /* RedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedView.swift; sourceTree = "<group>"; };
+		14FECEE429FB6F4700782606 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		14FECEE729FB6FF000782606 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		14FECEE929FB700700782606 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		14FECEEC29FB737E00782606 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		14FECEEE29FB738E00782606 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		14FECEF029FB74E400782606 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		14FECEF229FB74ED00782606 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		14FECEF529FB78E500782606 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +116,8 @@
 		14FECEAF29FA4E1C00782606 /* stinsen-example */ = {
 			isa = PBXGroup;
 			children = (
+				14FECEF429FB78D400782606 /* Services */,
+				14FECEE129FB6EEF00782606 /* Scenes */,
 				14FECEB029FA4E1C00782606 /* stinsen_exampleApp.swift */,
 				14FECEB229FA4E1C00782606 /* ContentView.swift */,
 				14FECEB429FA4E1D00782606 /* Assets.xcassets */,
@@ -133,6 +151,60 @@
 				14FECECD29FA4E1D00782606 /* stinsen_exampleUITestsLaunchTests.swift */,
 			);
 			path = "stinsen-exampleUITests";
+			sourceTree = "<group>";
+		};
+		14FECEE129FB6EEF00782606 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				14FECEEB29FB737500782606 /* Profile */,
+				14FECEE629FB6FDC00782606 /* Home */,
+				14FECEE329FB6F3000782606 /* App */,
+				14FECEE229FB6EF300782606 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		14FECEE229FB6EF300782606 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				14FECEF029FB74E400782606 /* LoginView.swift */,
+				14FECEF229FB74ED00782606 /* LoginCoordinator.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		14FECEE329FB6F3000782606 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				14FECEE429FB6F4700782606 /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		14FECEE629FB6FDC00782606 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				14FECEE729FB6FF000782606 /* HomeView.swift */,
+				14FECEE929FB700700782606 /* HomeCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		14FECEEB29FB737500782606 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				14FECEEC29FB737E00782606 /* ProfileView.swift */,
+				14FECEEE29FB738E00782606 /* ProfileCoordinator.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		14FECEF429FB78D400782606 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				14FECEF529FB78E500782606 /* AuthenticationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,9 +343,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14FECEED29FB737E00782606 /* ProfileView.swift in Sources */,
 				14FECEB329FA4E1C00782606 /* ContentView.swift in Sources */,
 				14FECEDE29FA4F0300782606 /* MainCoordinator.swift in Sources */,
+				14FECEF629FB78E500782606 /* AuthenticationService.swift in Sources */,
+				14FECEE529FB6F4700782606 /* AppCoordinator.swift in Sources */,
+				14FECEF329FB74ED00782606 /* LoginCoordinator.swift in Sources */,
+				14FECEE829FB6FF000782606 /* HomeView.swift in Sources */,
 				14FECEE029FA513700782606 /* RedView.swift in Sources */,
+				14FECEEA29FB700700782606 /* HomeCoordinator.swift in Sources */,
+				14FECEEF29FB738E00782606 /* ProfileCoordinator.swift in Sources */,
+				14FECEF129FB74E400782606 /* LoginView.swift in Sources */,
 				14FECEB129FA4E1C00782606 /* stinsen_exampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

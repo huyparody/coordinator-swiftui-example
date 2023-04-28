@@ -11,33 +11,47 @@ import SwiftUI
 
 final class MainCoordinator: NavigationCoordinatable {
     
-    let stack = NavigationStack.init(initial: \MainCoordinator.start)
+    var stack: Stinsen.NavigationStack<MainCoordinator>
     
-    @Root var start = makeStart
-    @Route(.push) var pushToRed = makeRed
+    @Root var unauthenticated = makeUnauthenticated
+    @Root var authenticated = makeAuthenticated
     
-    @ViewBuilder func makeStart() -> some View {
-        ContentView()
+    init() {
+        switch AuthenticationService.shared.status {
+        case .authenticated:
+            stack = NavigationStack(initial: \MainCoordinator.authenticated)
+        case .unauthenticated:
+            stack = NavigationStack(initial: \MainCoordinator.unauthenticated)
+        }
     }
     
-    @ViewBuilder func makeRed() -> some View {
-        RedView()
+    @ViewBuilder func sharedView(_ view: AnyView) -> some View {
+        view
+            .onReceive(AuthenticationService.shared.$status, perform: { status in
+                switch status {
+                case .unauthenticated:
+                    self.root(\.unauthenticated)
+                case .authenticated:
+                    self.root(\.authenticated)
+                }
+            })
+            
     }
     
-//    func makeRed() -> NavigationViewCoordinator<RedCoordinator> {
-//        return NavigationViewCoordinator(RedCoordinator())
-//    }
+    func customize(_ view: AnyView) -> some View {
+        sharedView(view)
+    }
 
 }
 
-final class RedCoordinator: NavigationCoordinatable {
+extension MainCoordinator {
     
-    let stack = NavigationStack.init(initial: \RedCoordinator.start)
+    func makeUnauthenticated() -> NavigationViewCoordinator<LoginCoordinator> {
+        return NavigationViewCoordinator(LoginCoordinator())
+    }
     
-    @Root var start = makeStart
-    
-    @ViewBuilder func makeStart() -> some View {
-        RedView()
+    func makeAuthenticated() -> AppCoordinator {
+        return AppCoordinator()
     }
     
 }

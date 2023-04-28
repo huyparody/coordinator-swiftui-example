@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button {
-                router.route(to: \.pushToRed)
+//                router.route(to: \.pushToRed)
             } label: {
                 Text("To red")
             }
